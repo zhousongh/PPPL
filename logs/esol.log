@@ -1,0 +1,41 @@
+nohup: ignoring input
+Loading previously saved dgl graphs...
+start processing dataset esol...
+processing global features...
+0it [00:00, ?it/s]/usr/bin/nvidia-modprobe: unrecognized option: "-s"
+
+ERROR: Invalid commandline, please run `/usr/bin/nvidia-modprobe --help`
+       for usage information.
+
+/usr/bin/nvidia-modprobe: unrecognized option: "-s"
+
+ERROR: Invalid commandline, please run `/usr/bin/nvidia-modprobe --help`
+       for usage information.
+
+1it [00:02,  2.33s/it]166it [00:02, 95.72it/s]335it [00:02, 217.21it/s]496it [00:02, 353.95it/s]664it [00:02, 517.05it/s]828it [00:02, 684.66it/s]995it [00:02, 857.88it/s]1128it [00:03, 374.05it/s]
+processing substructure features...
+0it [00:00, ?it/s]1it [00:00,  5.60it/s]17it [00:00, 73.43it/s]29it [00:00, 91.17it/s]40it [00:00, 97.30it/s]56it [00:00, 117.87it/s]69it [00:00, 121.19it/s]82it [00:00, 118.51it/s]96it [00:00, 123.78it/s]114it [00:01, 139.20it/s]129it [00:01, 134.40it/s]147it [00:01, 146.73it/s]163it [00:01, 149.31it/s]179it [00:01, 134.97it/s]193it [00:01, 120.73it/s]211it [00:01, 135.01it/s]226it [00:01, 134.48it/s]243it [00:01, 142.85it/s]258it [00:02, 135.59it/s]272it [00:02, 117.32it/s]285it [00:02, 119.04it/s]298it [00:02, 118.22it/s]311it [00:02, 115.96it/s]323it [00:02, 116.94it/s]335it [00:02, 116.70it/s]347it [00:02, 115.37it/s]361it [00:02, 115.69it/s]375it [00:03, 117.23it/s]388it [00:03, 117.64it/s]401it [00:03, 120.60it/s]414it [00:03, 116.34it/s]429it [00:03, 124.03it/s]448it [00:03, 141.87it/s]463it [00:03, 127.85it/s]480it [00:03, 131.41it/s]494it [00:04, 129.10it/s]510it [00:04, 136.10it/s]524it [00:04, 94.27it/s] 539it [00:04, 106.08it/s]554it [00:04, 115.77it/s]568it [00:04, 108.30it/s]583it [00:04, 115.34it/s]596it [00:04, 112.43it/s]610it [00:05, 117.83it/s]625it [00:05, 124.66it/s]641it [00:05, 122.60it/s]656it [00:05, 129.43it/s]673it [00:05, 139.10it/s]688it [00:05, 140.58it/s]703it [00:05, 128.57it/s]717it [00:05, 121.37it/s]730it [00:06, 119.15it/s]743it [00:06, 121.38it/s]756it [00:06, 116.31it/s]776it [00:06, 132.43it/s]794it [00:06, 145.06it/s]809it [00:06, 144.81it/s]825it [00:06, 147.31it/s]840it [00:06, 136.92it/s]855it [00:06, 140.23it/s]870it [00:07, 129.10it/s]884it [00:07, 131.52it/s]899it [00:07, 132.69it/s]913it [00:07, 121.73it/s]926it [00:07, 119.32it/s]940it [00:07, 124.39it/s]953it [00:07, 119.72it/s]966it [00:07, 112.69it/s]983it [00:07, 126.33it/s]996it [00:08, 118.36it/s]1011it [00:08, 126.35it/s]1024it [00:08, 126.09it/s]1037it [00:08, 126.51it/s]1051it [00:08, 127.41it/s]1068it [00:08, 133.76it/s]1085it [00:08, 139.95it/s]1100it [00:08, 128.74it/s]1114it [00:08, 128.60it/s]1128it [00:09, 124.25it/s]
+saving the results...
+loading global dataset...
+loading substructure set...
+Start initializing RDKit molecule instances...
+Creating RDKit molecule instance 1000/1128
+Start computing Bemis-Murcko scaffolds.
+Computing Bemis-Murcko for compound 1000/1128
+Processing fold 1/5
+Processing fold 2/5
+Processing fold 3/5
+Processing fold 4/5
+Processing fold 5/5
+  0%|          | 0/25 [00:00<?, ?it/s]'feat'
+'feat'
+'feat'
+  0%|          | 0/25 [00:12<?, ?it/s]
+Traceback (most recent call last):
+  File "/mnt/klj/PPPL/train.py", line 161, in <module>
+    model = train(model, loss, train_folds, test_set, lr)
+  File "/mnt/klj/PPPL/train.py", line 114, in train
+    net, train_l, test_l, accuracy = train_one_fold(
+  File "/mnt/klj/PPPL/train.py", line 98, in train_one_fold
+    test_l = test_metric[0] / test_metric[1]
+ZeroDivisionError: float division by zero

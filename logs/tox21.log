@@ -1,0 +1,31 @@
+nohup: ignoring input
+Downloading /mnt/klj/.dgl/sider.zip from https://data.dgl.ai/dataset/sider.zip...
+download failed, retrying, 4 attempts left
+Downloading /mnt/klj/.dgl/sider.zip from https://data.dgl.ai/dataset/sider.zip...
+download failed, retrying, 3 attempts left
+Downloading /mnt/klj/.dgl/sider.zip from https://data.dgl.ai/dataset/sider.zip...
+download failed, retrying, 2 attempts left
+Downloading /mnt/klj/.dgl/sider.zip from https://data.dgl.ai/dataset/sider.zip...
+download failed, retrying, 1 attempt left
+Downloading /mnt/klj/.dgl/sider.zip from https://data.dgl.ai/dataset/sider.zip...
+Traceback (most recent call last):
+  File "/mnt/klj/anaconda3/envs/3d_env/lib/python3.10/site-packages/dgl/data/utils.py", line 188, in download
+    f.write(chunk)
+OSError: [Errno 28] No space left on device
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/klj/PPPL/train.py", line 162, in <module>
+    dataset = FlexDataset(dataset_name=dataset_name,
+  File "/mnt/klj/PPPL/dataset/dataset.py", line 54, in __init__
+    raw_dataset = self.load_raw_dataset()  # 加载原始数据集
+  File "/mnt/klj/PPPL/dataset/dataset.py", line 170, in load_raw_dataset
+    dataset = SIDER(SMILESToBigraph(node_featurizer=ATOM_FEATURIZER,
+  File "/mnt/klj/anaconda3/envs/3d_env/lib/python3.10/site-packages/dgllife/data/sider.py", line 97, in __init__
+    download(_get_dgl_url(self._url), path=data_path, overwrite=False)
+  File "/mnt/klj/anaconda3/envs/3d_env/lib/python3.10/site-packages/dgl/data/utils.py", line 200, in download
+    raise e
+  File "/mnt/klj/anaconda3/envs/3d_env/lib/python3.10/site-packages/dgl/data/utils.py", line 185, in download
+    with open(fname, "wb") as f:
+OSError: [Errno 28] No space left on device

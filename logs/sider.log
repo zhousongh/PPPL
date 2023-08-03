@@ -1,0 +1,10 @@
+nohup: ignoring input
+Traceback (most recent call last):
+  File "/mnt/klj/PPPL/train.py", line 6, in <module>
+    from model import Framework, HGNN
+  File "/mnt/klj/PPPL/model.py", line 5, in <module>
+    from dataset.dataset import FlexDataset, FlexDataLoader
+  File "/mnt/klj/PPPL/dataset/dataset.py", line 194
+    Graphs_path = osp.join(
+                          ^
+SyntaxError: '(' was never closed
