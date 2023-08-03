@@ -99,6 +99,7 @@ def getRMSE(y_hat, y_true):
     residuals = y_hat - y_true
     return torch.sqrt(torch.mean(residuals**2)).item()
 
+
 def print_item(x):
     if torch.is_tensor(x):
         return x.item()

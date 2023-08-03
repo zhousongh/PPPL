@@ -7,7 +7,7 @@ import dgl
 from rdkit import Chem
 from dgl.nn.pytorch import GraphConv
 
-
+ 
 # 学习分子全图表示
 class MolGNN(nn.Module):
     def __init__(self, hidden_dim, aggr, residual):
