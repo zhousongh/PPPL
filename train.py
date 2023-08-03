@@ -10,8 +10,8 @@ from utils import Accumulator, get_loss_curve, get_roc_curve, load_model, getRig
 
 # 参数
 hidden_dim = 64
-in_edge_width=7
-in_node_width=100
+in_edge_width = 7
+in_node_width = 100
 num_epochs = 50
 num_folds = 5
 batch_size = 256
@@ -20,7 +20,7 @@ context_num = 64
 num_heads = 4
 dataset_name = 'tox21'
 test_everyn = 10
-task_num=12
+task_num = 12
 
 
 device = torch.device("cuda:1")
@@ -174,13 +174,13 @@ if __name__ == "__main__":
         classifier = nn.Sequential(
             nn.Linear(hidden_dim, dataset[0]["label"].numel()), nn.Sigmoid())
         model = Framework(in_node_features=in_node_width, in_edge_features=in_edge_width,
-                          hidden_dim=hidden_dim, aggr='sum', residual=False, context_num=context_num, num_heads=num_heads, predictor=classifier,task_num=task_num,device=device).to(device)
+                          hidden_dim=hidden_dim, aggr='sum', residual=False, context_num=context_num, num_heads=num_heads, predictor=classifier, task_num=task_num, device=device).to(device)
         loss = nn.BCELoss(reduction='sum', weight=dataset.task_pos_weights())
         task = 'classification'
     elif dataset.dataset_name in ['esol', 'freesolv', 'lipo']:
         regressor = nn.Sequential(nn.Linear(hidden_dim, 1))
         model = Framework(in_node_features=in_node_width, in_edge_features=in_edge_width,
-                          hidden_dim=hidden_dim, aggr='sum', residual=False, context_num=context_num, num_heads=num_heads, predictor=regressor,device=device).to(device)
+                          hidden_dim=hidden_dim, aggr='sum', residual=False, context_num=context_num, num_heads=num_heads, predictor=regressor, device=device).to(device)
         loss = nn.MSELoss(reduction='sum')
         task = 'regression'
 
