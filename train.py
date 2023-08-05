@@ -17,7 +17,7 @@ num_folds = 5
 batch_size = 256
 lr = 0.002
 num_heads = 4
-dataset_name = 'toxcast'
+dataset_name = 'pcba'
 test_everyn = 1
 task_num=12
 

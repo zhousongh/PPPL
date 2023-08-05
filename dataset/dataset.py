@@ -1,4 +1,4 @@
-from dgllife.data import Tox21, ClinTox, PCBA, MUV, SIDER, ToxCast
+from dgllife.data import Tox21, ClinTox, PCBA, MUV, SIDER, ToxCast,MoleculeCSVDataset
 from dgllife.utils import SMILESToBigraph
 # from process_utils import ATOM_FEATURIZER, BOND_FEATURIZER
 # from dataset.process_utils import ATOM_FEATURIZER, BOND_FEATURIZER
@@ -163,12 +163,10 @@ class FlexDataset(Dataset):
                 dataset = ToxCast(SMILESToBigraph(node_featurizer=ATOM_FEATURIZER,
                                                   edge_featurizer=BOND_FEATURIZER), load=False, cache_file_path=save_path)
         elif self.dataset_name == 'sider':
-            if self.has_downloaded():
-                dataset = SIDER(SMILESToBigraph(node_featurizer=ATOM_FEATURIZER,
-                                edge_featurizer=BOND_FEATURIZER), load=True, cache_file_path=save_path)
-            else:
-                dataset = SIDER(SMILESToBigraph(node_featurizer=ATOM_FEATURIZER,
-                                edge_featurizer=BOND_FEATURIZER), load=False, cache_file_path=save_path)
+            file_path=osp.join(self.org_root,r'raw/sider.csv')
+            df = pd.read_csv(file_path)
+            dataset=MoleculeCSVDataset(df=df,smiles_to_graph=SMILESToBigraph(node_featurizer=ATOM_FEATURIZER,
+                                                  edge_featurizer=BOND_FEATURIZER),cache_file_path=save_path,load=False,smiles_column='smiles')
         return dataset
 
     # 加工数据集并保存
